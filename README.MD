@@ -36,7 +36,7 @@ git subtree push --prefix=src/Common https://github.com/M76chao/Common.git maste
 ```
 
 ## 拉取子项目最新代码 pull
-
+命令：
 ```
 git subtree pull --prefix=<存放子项目的相对路径> <子项目git地址> <分支> --squash
 ```
@@ -46,3 +46,22 @@ git subtree pull --prefix=<存放子项目的相对路径> <子项目git地址> 
 git subtree pull --prefix=src/Common https://github.com/M76chao/Common.git master
 ```
 
+## 其他 git subtree split
+命令：
+```
+git subtree split --prefix=<存放子项目的相对路径> --rejoin
+```
+
+例如：
+```
+git subtree split --prefix=src/Common --rejoin
+```
+
+
+## vite模块联邦问题总结
+1. 不支持热更新，因为vite开发时类似于运行时，并没有打包，也就没有打包所拥有的目录结构
+2. 插件本身的问题，打包的组件不能出现text node，否则会消失。
+3. 层级引用问题，app1 引用的 app2 ，如果app2没有导出，则直接失效
+
+都有的问题：
+. 主要就是编辑器的类型提示
