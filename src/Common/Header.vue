@@ -1,15 +1,14 @@
 <template>
   <div>
     <h1 class="bgimg">
-      <span>这是一个头部导航</span>
-      <br />
-      <span>{{ name }}</span>
+      这是一个头部导航 <br />
+      {{ name }}
     </h1>
-    <!--    <ceshi />-->
+    <ceshi />
   </div>
 </template>
 <script>
-// import ceshi from "./ceshi.vue";
+import ceshi from "./ceshi.vue";
 export default {
   props: {
     name: {
@@ -17,11 +16,7 @@ export default {
       default: "",
     },
   },
-  // components: { ceshi },
+  components: { ceshi },
 };
 </script>
-<style>
-.bgimg span {
-  color: red;
-}
-</style>
+<style></style>
